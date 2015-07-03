@@ -14,6 +14,8 @@
 		BD0806D61B44C3A6005D9E53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD0806D51B44C3A6005D9E53 /* Images.xcassets */; };
 		BD0806D91B44C3A6005D9E53 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD0806D71B44C3A6005D9E53 /* LaunchScreen.xib */; };
 		BD0806E51B44C3A6005D9E53 /* OthelloTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0806E41B44C3A6005D9E53 /* OthelloTests.m */; };
+		BD0806F21B44C419005D9E53 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0806F11B44C419005D9E53 /* Board.m */; };
+		BD0806F51B44C42E005D9E53 /* OthelloBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0806F41B44C42E005D9E53 /* OthelloBoard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		BD0806DE1B44C3A6005D9E53 /* OthelloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OthelloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0806E31B44C3A6005D9E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD0806E41B44C3A6005D9E53 /* OthelloTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OthelloTests.m; sourceTree = "<group>"; };
+		BD0806F01B44C419005D9E53 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		BD0806F11B44C419005D9E53 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		BD0806F31B44C42E005D9E53 /* OthelloBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthelloBoard.h; sourceTree = "<group>"; };
+		BD0806F41B44C42E005D9E53 /* OthelloBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthelloBoard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +87,9 @@
 		BD0806C71B44C3A6005D9E53 /* Othello */ = {
 			isa = PBXGroup;
 			children = (
-				BD0806CC1B44C3A6005D9E53 /* AppDelegate.h */,
-				BD0806CD1B44C3A6005D9E53 /* AppDelegate.m */,
-				BD0806CF1B44C3A6005D9E53 /* ViewController.h */,
-				BD0806D01B44C3A6005D9E53 /* ViewController.m */,
-				BD0806D21B44C3A6005D9E53 /* Main.storyboard */,
+				BD0806EF1B44C3D1005D9E53 /* Model */,
+				BD0806EE1B44C3AF005D9E53 /* GUI */,
 				BD0806D51B44C3A6005D9E53 /* Images.xcassets */,
-				BD0806D71B44C3A6005D9E53 /* LaunchScreen.xib */,
 				BD0806C81B44C3A6005D9E53 /* Supporting Files */,
 			);
 			path = Othello;
@@ -117,6 +119,30 @@
 				BD0806E31B44C3A6005D9E53 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BD0806EE1B44C3AF005D9E53 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				BD0806D71B44C3A6005D9E53 /* LaunchScreen.xib */,
+				BD0806CC1B44C3A6005D9E53 /* AppDelegate.h */,
+				BD0806CD1B44C3A6005D9E53 /* AppDelegate.m */,
+				BD0806CF1B44C3A6005D9E53 /* ViewController.h */,
+				BD0806D01B44C3A6005D9E53 /* ViewController.m */,
+				BD0806D21B44C3A6005D9E53 /* Main.storyboard */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		BD0806EF1B44C3D1005D9E53 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD0806F01B44C419005D9E53 /* Board.h */,
+				BD0806F11B44C419005D9E53 /* Board.m */,
+				BD0806F31B44C42E005D9E53 /* OthelloBoard.h */,
+				BD0806F41B44C42E005D9E53 /* OthelloBoard.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD0806D11B44C3A6005D9E53 /* ViewController.m in Sources */,
+				BD0806F51B44C42E005D9E53 /* OthelloBoard.m in Sources */,
 				BD0806CE1B44C3A6005D9E53 /* AppDelegate.m in Sources */,
+				BD0806F21B44C419005D9E53 /* Board.m in Sources */,
 				BD0806CB1B44C3A6005D9E53 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
