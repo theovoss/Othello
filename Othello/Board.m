@@ -10,12 +10,13 @@
 
 @implementation Board
 
--(id)initWithName:(NSInteger)rows_ columns:(NSInteger)columns_
+-(id)initWithRows:(NSInteger)numberOfRows columns:(NSInteger)numberOfColumns
 {
     self = [super init];
     if (self) {
-        self.rows = rows_;
-        self.columns = columns_;
+        _board = [NSMutableDictionary new];
+        self.rows = numberOfRows;
+        self.columns = numberOfColumns;
     }
     return self;
 }
@@ -35,5 +36,10 @@
 - (NSInteger) getColumnFromKey:(NSString*)key{
     return [[key componentsSeparatedByString:@"|"][1] intValue];
 }
+
+- (NSString *) objectForKey:(NSString*)key{
+    return self.board[key];
+}
+
 
 @end

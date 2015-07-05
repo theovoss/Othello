@@ -11,21 +11,28 @@
 @implementation OthelloBoard
 
 #pragma mark - initialize board
--(id)initWithName:(NSInteger)rows_ columns:(NSInteger)columns_
+-(id)initWithRows:(NSInteger)numberOfRows withColumns:(NSInteger)numberOfColumns
 {
-    self = [super init];
-    self.EMPTY = @"EMPTY";
-    self.UP = @"UP";
-    self.DOWN = @"DOWN";
+    self = [super initWithRows:numberOfRows columns:numberOfColumns];
+    if (self) {
+        self.EMPTY = @"EMPTY";
+        self.UP = @"UP";
+        self.DOWN = @"DOWN";
     
-    [self initializeBoard];
+        _numberOfRows = numberOfRows;
+        _numberOfColumns = numberOfColumns;
+    
+        [self initializeBoard];
+        [self setStartPieces];
+    }
     return self;
 }
 
 - (void) initializeBoard {
-    for(NSInteger row = 0; row < self.rows; row++)
+    NSLog(@"Initializing model board");
+    for(NSInteger row = 0; row < self.numberOfRows; row++)
     {
-        for(NSInteger column = 0; column < self.columns; column++)
+        for(NSInteger column = 0; column < self.numberOfColumns; column++)
         {
             NSString * key = [self generateKey:row column:column];
             [self.board setObject:self.EMPTY forKey:key];
@@ -34,8 +41,9 @@
 }
 
 - (void) setStartPieces{
-    NSInteger middleRow = self.rows / 2;
-    NSInteger middleColumn = self.columns / 2;
+    NSLog(@"Setting Starting pieces");
+    NSInteger middleRow = (self.numberOfRows / 2) - 1;
+    NSInteger middleColumn = (self.numberOfColumns / 2) - 1;
     
     NSString *key = [self generateKey: middleRow column:middleColumn];
     [self.board setObject:self.UP forKey:key];

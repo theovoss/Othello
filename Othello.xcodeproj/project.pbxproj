@@ -16,6 +16,8 @@
 		BD0806E51B44C3A6005D9E53 /* OthelloTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0806E41B44C3A6005D9E53 /* OthelloTests.m */; };
 		BD0806F21B44C419005D9E53 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0806F11B44C419005D9E53 /* Board.m */; };
 		BD0806F51B44C42E005D9E53 /* OthelloBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0806F41B44C42E005D9E53 /* OthelloBoard.m */; };
+		BD37E7F51B484DED00A848E1 /* ColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD37E7F41B484DED00A848E1 /* ColumnView.m */; };
+		BD37E7FA1B48AF7300A848E1 /* OthelloUI.m in Sources */ = {isa = PBXBuildFile; fileRef = BD37E7F91B48AF7300A848E1 /* OthelloUI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,10 @@
 		BD0806F11B44C419005D9E53 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
 		BD0806F31B44C42E005D9E53 /* OthelloBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthelloBoard.h; sourceTree = "<group>"; };
 		BD0806F41B44C42E005D9E53 /* OthelloBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthelloBoard.m; sourceTree = "<group>"; };
+		BD37E7F31B484DED00A848E1 /* ColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColumnView.h; sourceTree = "<group>"; };
+		BD37E7F41B484DED00A848E1 /* ColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColumnView.m; sourceTree = "<group>"; };
+		BD37E7F61B489B7900A848E1 /* OthelloUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthelloUI.h; sourceTree = "<group>"; };
+		BD37E7F91B48AF7300A848E1 /* OthelloUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthelloUI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,10 @@
 				BD0806CF1B44C3A6005D9E53 /* ViewController.h */,
 				BD0806D01B44C3A6005D9E53 /* ViewController.m */,
 				BD0806D21B44C3A6005D9E53 /* Main.storyboard */,
+				BD37E7F31B484DED00A848E1 /* ColumnView.h */,
+				BD37E7F41B484DED00A848E1 /* ColumnView.m */,
+				BD37E7F61B489B7900A848E1 /* OthelloUI.h */,
+				BD37E7F91B48AF7300A848E1 /* OthelloUI.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -247,6 +257,8 @@
 			files = (
 				BD0806D11B44C3A6005D9E53 /* ViewController.m in Sources */,
 				BD0806F51B44C42E005D9E53 /* OthelloBoard.m in Sources */,
+				BD37E7F51B484DED00A848E1 /* ColumnView.m in Sources */,
+				BD37E7FA1B48AF7300A848E1 /* OthelloUI.m in Sources */,
 				BD0806CE1B44C3A6005D9E53 /* AppDelegate.m in Sources */,
 				BD0806F21B44C419005D9E53 /* Board.m in Sources */,
 				BD0806CB1B44C3A6005D9E53 /* main.m in Sources */,
@@ -446,6 +458,7 @@
 				BD0806EA1B44C3A6005D9E53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD0806EB1B44C3A6005D9E53 /* Build configuration list for PBXNativeTarget "OthelloTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +467,7 @@
 				BD0806ED1B44C3A6005D9E53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

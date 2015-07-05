@@ -15,11 +15,15 @@
 @property NSString * DOWN;
 @property NSString * EMPTY;
 
+@property NSInteger numberOfRows;
+@property NSInteger numberOfColumns;
+
+- (instancetype) initWithRows:(NSInteger)numberOfRows withColumns:(NSInteger)numberOfColumns;
 - (void) initializeBoard;
 - (void) setStartPieces;
 
 #pragma mark - functional functions
-- (BOOL) placePiece:(NSInteger) row column:(NSInteger)column;
+- (BOOL) placePiece:(NSInteger) row column:(NSInteger)column orientation:(NSString*)orientation;
 
 #pragma mark - convenience functions
 - (BOOL) isValidPlacement:(NSInteger) row column:(NSInteger)column orientation:(NSString*)orientation;

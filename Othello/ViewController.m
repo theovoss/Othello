@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "OthelloUI.h"
 
 @interface ViewController ()
 
@@ -14,8 +15,25 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    NSInteger numberOfRows = 8;
+    NSInteger numberOfColumns = 8;
+    
+    CGRect frame = [[UIScreen mainScreen] bounds];
+    
+    NSInteger pieceWidth = frame.size.width/numberOfColumns;
+    NSInteger pieceHeight = frame.size.height/numberOfRows;
+    if (pieceHeight > pieceWidth) {
+        pieceHeight = pieceWidth;
+    }
+    else{
+        pieceWidth = pieceHeight;
+    }
+    CGSize pieceSize = CGSizeMake(pieceWidth, pieceHeight);
+    self.view = [[OthelloUIView alloc] initWithColumns:numberOfColumns withRows:numberOfRows withPieceSize:pieceSize];
+
     // Do any additional setup after loading the view, typically from a nib.
 }
 

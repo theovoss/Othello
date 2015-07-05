@@ -14,8 +14,9 @@
 @property NSInteger rows;
 @property NSInteger columns;
 
+- (instancetype) initWithRows:(NSInteger)numberOfRows columns:(NSInteger)numberOfColumns;
 - (NSString *) generateKey:(NSInteger)row column:(NSInteger)column;
 - (NSInteger) getRowFromKey:(NSString*)key;
 - (NSInteger) getColumnFromKey:(NSString*)key;
-
+- (NSString *) objectForKey:(NSString*)key;
 @end
