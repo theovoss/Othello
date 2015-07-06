@@ -65,9 +65,9 @@
         self.board[[self generateKey:row column:column]] = orientation;
         NSArray * piecesToFlip = [self findAllPiecesToFlip:row column:column orientation:orientation];
         [self flipPieces:piecesToFlip];
-        return true;
+        return YES;
     }
-    return false;
+    return NO;
 }
 
 - (BOOL) isValidPlacement:(NSInteger) row column:(NSInteger)column orientation:(NSString*)orientation{
@@ -77,21 +77,22 @@
     BOOL canFlipPieces = [piecesToFlip count] > 0;
     
     if (isEmpty && isNextToOppositePiece && canFlipPieces) {
-        return true;
+        return YES;
     }
     else{
-        return false;
+        return NO;
     }
 }
 #pragma mark - convenience functions
 
 - (NSArray *) findAllPiecesToFlip:(NSInteger)row column:(NSInteger)column orientation:(NSString *)orientation{
+    NSArray * piecesToFlip = [[NSArray alloc] init];
+    
     NSString * orientationToFlip = self.UP;
     if (orientation == self.UP)
     {
         orientationToFlip = self.DOWN;
     }
-    NSArray * piecesToFlip;
     for (NSString* key in [self getAdjacentKeys:row column:column]) {
         if (self.board[key] != orientation && self.board[key] != self.EMPTY) {
             NSArray* piecesToAdd = [self findPiecesToFlipAlongPath:row column:column key:key orientationToFlip:orientationToFlip];
@@ -102,7 +103,7 @@
 }
 
 - (NSArray *)findPiecesToFlipAlongPath:(NSInteger)row column:(NSInteger)column key:(NSString *)key orientationToFlip:(NSString *)orientationToFlip {
-    NSMutableArray * piecesToFlip;
+    NSMutableArray * piecesToFlip = [[NSMutableArray alloc] init];
     NSInteger keyColumn = [self getColumnFromKey:key];
     NSInteger keyRow = [self getRowFromKey:key];
     
@@ -116,6 +117,10 @@
         keyRow = [self getRowFromKey:key];
         
         key = [self generateKey:keyRow + rowDiff column:keyColumn + columnDiff];
+    }
+    
+    if (self.board[key] != [self getOppositeOrientation:orientationToFlip]){
+        return nil;
     }
     
     return piecesToFlip;
@@ -132,29 +137,29 @@
         }
         else{
             // can't flip an empty piece
-            return false;
+            return NO;
         }
     }
-    return true;
+    return YES;
 }
 
 - (BOOL) isEmpty:(NSInteger)row column:(NSInteger)column{
     NSString *boardLocation = [self generateKey:row column:column];
     if (self.board[boardLocation] == self.EMPTY){
-        return true;
+        return YES;
     }
     else{
-        return false;
+        return NO;
     }
 }
 
 - (BOOL) isNextToOppositePiece:(NSInteger)row column:(NSInteger)column orientation:(NSString*) orientation{
     for (NSString * key in [self getAdjacentKeys:row column:column]) {
         if (self.board[key] != self.EMPTY && self.board[key] != orientation) {
-            return true;
+            return YES;
         }
     }
-    return false;
+    return NO;
 }
 
 - (NSArray *) getAdjacentKeys:(NSInteger) row column:(NSInteger)column{

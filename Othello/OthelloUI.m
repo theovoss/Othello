@@ -53,7 +53,7 @@
 - (void) placePiece:(NSInteger)row column:(NSInteger)column
 {
     BOOL success = [self.othelloBoard placePiece:row column:column orientation:self.currentOrientation];
-    if (success == true)
+    if (success == YES)
     {
         self.currentOrientation = [self.othelloBoard getOppositeOrientation:self.currentOrientation];
         [self updateUI];
@@ -62,6 +62,9 @@
 
 - (IBAction)buttonCallback:(UIButton *)sender
 {
+    NSInteger row = [self getRowFromIndex:[sender tag]];
+    NSInteger column = [self getColumnFromIndex:[sender tag]];
+    [self placePiece:row column:column];
     NSLog(@"Frame of button tapped: %ld", (long)[sender tag]);
     NSLog(@"Button at row: %ld and column: %ld was tapped.", (long)[self getRowFromIndex:[sender tag]], (long)[self getColumnFromIndex:[sender tag]]);
 }
