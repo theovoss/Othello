@@ -22,4 +22,9 @@
 - (void) updateUI;
 - (void) placePiece:(NSInteger)row column:(NSInteger)column;
 
+- (IBAction)buttonCallback:(UIButton *)sender;
+
+- (NSInteger)getRowFromIndex:(NSInteger)index;
+- (NSInteger)getRowFromIndex:(NSInteger)index;
+
 @end

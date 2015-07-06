@@ -13,13 +13,18 @@
 - (instancetype) initWithRows:(NSInteger)numberOfRows withPieceSize:(CGSize)pieceSize{
     self = [super init];
     if (self) {
-        self.frame = CGRectMake(0, 0, pieceSize.width, pieceSize.height*numberOfRows);
+        self.frame = CGRectMake(0, 0, pieceSize.width, pieceSize.height * numberOfRows);
         _rowViews = [[NSMutableArray alloc] init];
+        self.backgroundColor = [[UIColor blueColor]colorWithAlphaComponent:0.25];
+        
         for (NSInteger counter = 0; counter < numberOfRows; counter++) {
             CGRect pieceFrame = CGRectMake(0, counter*pieceSize.height, pieceSize.width, pieceSize.height);
             UIButton * piece = [[UIButton alloc] initWithFrame:pieceFrame];
 //            can customize piece here. for default empty.
-            [piece setTitle:@"Empty" forState:UIControlStateNormal];
+            [piece.layer setBorderWidth:1.0];
+            [piece.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+            piece.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:0.25];
+            [piece setTitle:@"Default" forState:UIControlStateNormal];
             [self addSubview:piece];
             [_rowViews addObject:piece];
             

@@ -17,7 +17,7 @@
 		BD0806F21B44C419005D9E53 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0806F11B44C419005D9E53 /* Board.m */; };
 		BD0806F51B44C42E005D9E53 /* OthelloBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0806F41B44C42E005D9E53 /* OthelloBoard.m */; };
 		BD37E7F51B484DED00A848E1 /* ColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD37E7F41B484DED00A848E1 /* ColumnView.m */; };
-		BD37E7FA1B48AF7300A848E1 /* OthelloUI.m in Sources */ = {isa = PBXBuildFile; fileRef = BD37E7F91B48AF7300A848E1 /* OthelloUI.m */; };
+		BD37E7FC1B4A0FA900A848E1 /* OthelloUI.m in Sources */ = {isa = PBXBuildFile; fileRef = BD37E7FB1B4A0FA900A848E1 /* OthelloUI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 		BD37E7F31B484DED00A848E1 /* ColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColumnView.h; sourceTree = "<group>"; };
 		BD37E7F41B484DED00A848E1 /* ColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColumnView.m; sourceTree = "<group>"; };
 		BD37E7F61B489B7900A848E1 /* OthelloUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthelloUI.h; sourceTree = "<group>"; };
-		BD37E7F91B48AF7300A848E1 /* OthelloUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthelloUI.m; sourceTree = "<group>"; };
+		BD37E7FB1B4A0FA900A848E1 /* OthelloUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthelloUI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +130,7 @@
 		BD0806EE1B44C3AF005D9E53 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				BD37E7FB1B4A0FA900A848E1 /* OthelloUI.m */,
 				BD0806D71B44C3A6005D9E53 /* LaunchScreen.xib */,
 				BD0806CC1B44C3A6005D9E53 /* AppDelegate.h */,
 				BD0806CD1B44C3A6005D9E53 /* AppDelegate.m */,
@@ -139,7 +140,6 @@
 				BD37E7F31B484DED00A848E1 /* ColumnView.h */,
 				BD37E7F41B484DED00A848E1 /* ColumnView.m */,
 				BD37E7F61B489B7900A848E1 /* OthelloUI.h */,
-				BD37E7F91B48AF7300A848E1 /* OthelloUI.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -258,7 +258,7 @@
 				BD0806D11B44C3A6005D9E53 /* ViewController.m in Sources */,
 				BD0806F51B44C42E005D9E53 /* OthelloBoard.m in Sources */,
 				BD37E7F51B484DED00A848E1 /* ColumnView.m in Sources */,
-				BD37E7FA1B48AF7300A848E1 /* OthelloUI.m in Sources */,
+				BD37E7FC1B4A0FA900A848E1 /* OthelloUI.m in Sources */,
 				BD0806CE1B44C3A6005D9E53 /* AppDelegate.m in Sources */,
 				BD0806F21B44C419005D9E53 /* Board.m in Sources */,
 				BD0806CB1B44C3A6005D9E53 /* main.m in Sources */,

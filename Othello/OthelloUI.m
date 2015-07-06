@@ -20,11 +20,12 @@
         _columnViews = [[NSMutableArray alloc] init];
 
         for (NSInteger column = 0; column < numberOfColumns; column++) {
-            CGRect columnFrame = CGRectMake(column*pieceSize.width, 0, pieceSize.width, pieceSize.height);
             ColumnView * view = [[ColumnView alloc] initWithRows:numberOfRows withPieceSize:pieceSize];
+            CGRect columnFrame = CGRectMake(column*pieceSize.width, 0, pieceSize.width, view.bounds.size.height);
             view.frame = columnFrame;
             [self addSubview:view];
             [_columnViews addObject:view];
+            self.backgroundColor = [UIColor whiteColor];
         }
         [self updateUI];
     }
@@ -41,10 +42,10 @@
             
             UIButton *piece = [columnView OthelloPieceAtRow:row];
             NSString *title = self.othelloBoard.board[key];
-            NSLog(@"Title is:");
-            NSLog(title);
             [piece setTitle:title forState:UIControlStateNormal];
-            [columnView SetPieceAtRow:row withPiece:piece];
+            [piece addTarget:self action:@selector(buttonCallback:) forControlEvents:UIControlEventTouchUpInside];
+            piece.tag = column + row * self.columnViews.count;
+            //[columnView SetPieceAtRow:row withPiece:piece];
         }
     }
 }
@@ -57,6 +58,20 @@
         self.currentOrientation = [self.othelloBoard getOppositeOrientation:self.currentOrientation];
         [self updateUI];
     }
+}
+
+- (IBAction)buttonCallback:(UIButton *)sender
+{
+    NSLog(@"Frame of button tapped: %ld", (long)[sender tag]);
+    NSLog(@"Button at row: %ld and column: %ld was tapped.", (long)[self getRowFromIndex:[sender tag]], (long)[self getColumnFromIndex:[sender tag]]);
+}
+
+- (NSInteger)getRowFromIndex:(NSInteger)index{
+    return index / self.columnViews.count;
+}
+
+- (NSInteger)getColumnFromIndex:(NSInteger)index{
+    return index % self.columnViews.count;
 }
 
 @end
