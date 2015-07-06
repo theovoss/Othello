@@ -42,10 +42,18 @@
             
             UIButton *piece = [columnView OthelloPieceAtRow:row];
             NSString *title = self.othelloBoard.board[key];
-            [piece setTitle:title forState:UIControlStateNormal];
+//            [piece setTitle:title forState:UIControlStateNormal];
+            if (title == self.othelloBoard.UP) {
+                [piece setBackgroundColor:[UIColor blackColor]];
+            }
+            else if (title == self.othelloBoard.DOWN){
+                [piece setBackgroundColor:[UIColor whiteColor]];
+            }
+            else{
+                [piece setBackgroundColor:[UIColor greenColor]];
+            }
             [piece addTarget:self action:@selector(buttonCallback:) forControlEvents:UIControlEventTouchUpInside];
             piece.tag = column + row * self.columnViews.count;
-            //[columnView SetPieceAtRow:row withPiece:piece];
         }
     }
 }

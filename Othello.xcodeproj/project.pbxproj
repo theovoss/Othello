@@ -130,7 +130,6 @@
 		BD0806EE1B44C3AF005D9E53 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				BD37E7FB1B4A0FA900A848E1 /* OthelloUI.m */,
 				BD0806D71B44C3A6005D9E53 /* LaunchScreen.xib */,
 				BD0806CC1B44C3A6005D9E53 /* AppDelegate.h */,
 				BD0806CD1B44C3A6005D9E53 /* AppDelegate.m */,
@@ -140,6 +139,7 @@
 				BD37E7F31B484DED00A848E1 /* ColumnView.h */,
 				BD37E7F41B484DED00A848E1 /* ColumnView.m */,
 				BD37E7F61B489B7900A848E1 /* OthelloUI.h */,
+				BD37E7FB1B4A0FA900A848E1 /* OthelloUI.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
