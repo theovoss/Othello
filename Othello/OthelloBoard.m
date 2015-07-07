@@ -63,7 +63,7 @@
 - (BOOL) placePiece:(NSInteger) row column:(NSInteger)column orientation:(NSString*)orientation{
     if ([self isValidPlacement:row column:column orientation:orientation]){
         self.board[[self generateKey:row column:column]] = orientation;
-        NSArray * piecesToFlip = [self findAllPiecesToFlip:row column:column orientation:orientation];
+        NSArray * piecesToFlip = [self findAllPiecesToFlipWithRow:row column:column orientation:orientation];
         [self flipPieces:piecesToFlip];
         return YES;
     }
@@ -72,8 +72,8 @@
 
 - (BOOL) isValidPlacement:(NSInteger) row column:(NSInteger)column orientation:(NSString*)orientation{
     BOOL isEmpty = [self isEmpty:row column:column];
-    BOOL isNextToOppositePiece = [self isNextToOppositePiece:row column:column orientation:orientation];
-    NSArray *piecesToFlip = [self findAllPiecesToFlip:row column:column orientation:orientation];
+    BOOL isNextToOppositePiece = [self isNextToOppositePieceWithRow:row column:column orientation:orientation];
+    NSArray *piecesToFlip = [self findAllPiecesToFlipWithRow:row column:column orientation:orientation];
     BOOL canFlipPieces = [piecesToFlip count] > 0;
     
     if (isEmpty && isNextToOppositePiece && canFlipPieces) {
@@ -85,7 +85,7 @@
 }
 #pragma mark - convenience functions
 
-- (NSArray *) findAllPiecesToFlip:(NSInteger)row column:(NSInteger)column orientation:(NSString *)orientation{
+- (NSArray *) findAllPiecesToFlipWithRow:(NSInteger)row column:(NSInteger)column orientation:(NSString *)orientation{
     NSArray * piecesToFlip = [[NSArray alloc] init];
     
     NSString * orientationToFlip = self.UP;
@@ -100,6 +100,12 @@
         }
     }
     return piecesToFlip;
+}
+
+- (NSArray *) findAllPiecesToFlipWithKey:key orientation:orientation{
+    NSInteger row = [self getRowFromKey:key];
+    NSInteger column = [self getColumnFromKey:key];
+    return [self findAllPiecesToFlipWithRow:row column:column orientation:orientation];
 }
 
 - (NSArray *)findPiecesToFlipAlongPath:(NSInteger)row column:(NSInteger)column key:(NSString *)key orientationToFlip:(NSString *)orientationToFlip {
@@ -153,13 +159,20 @@
     }
 }
 
-- (BOOL) isNextToOppositePiece:(NSInteger)row column:(NSInteger)column orientation:(NSString*) orientation{
+- (BOOL) isNextToOppositePieceWithRow:(NSInteger)row column:(NSInteger)column orientation:(NSString*) orientation{
     for (NSString * key in [self getAdjacentKeys:row column:column]) {
         if (self.board[key] != self.EMPTY && self.board[key] != orientation) {
             return YES;
         }
     }
     return NO;
+}
+
+- (BOOL) isNextToOppositePieceWithKey:(NSString*)key orientation:(NSString*) orientation
+{
+    NSInteger row = [self getRowFromKey:key];
+    NSInteger column = [self getColumnFromKey:key];
+    return [self isNextToOppositePieceWithRow:row column:column orientation:orientation];
 }
 
 - (NSArray *) getAdjacentKeys:(NSInteger) row column:(NSInteger)column{
@@ -188,6 +201,20 @@
     {
         return self.EMPTY;
     }
+}
+
+- (BOOL) hasAValidMove:(NSString*) orientation
+{
+    for (NSString *key in [self.board allKeys]) {
+        if (self.board[key] == self.EMPTY) {
+            if ([self isNextToOppositePieceWithKey:key orientation:orientation]) {
+                if ([self findAllPiecesToFlipWithKey:key orientation:orientation].count != 0) {
+                    return YES;
+                }
+            }
+        }
+    }
+    return NO;
 }
 
 @end

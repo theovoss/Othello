@@ -18,6 +18,8 @@
 		BD0806F51B44C42E005D9E53 /* OthelloBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0806F41B44C42E005D9E53 /* OthelloBoard.m */; };
 		BD37E7F51B484DED00A848E1 /* ColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD37E7F41B484DED00A848E1 /* ColumnView.m */; };
 		BD37E7FC1B4A0FA900A848E1 /* OthelloUI.m in Sources */ = {isa = PBXBuildFile; fileRef = BD37E7FB1B4A0FA900A848E1 /* OthelloUI.m */; };
+		BDE503CD1B4B66A70099C33E /* amy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BDE503CC1B4B66A70099C33E /* amy.jpg */; };
+		BDE503CF1B4B66B10099C33E /* theo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BDE503CE1B4B66B10099C33E /* theo.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		BD37E7F41B484DED00A848E1 /* ColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColumnView.m; sourceTree = "<group>"; };
 		BD37E7F61B489B7900A848E1 /* OthelloUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthelloUI.h; sourceTree = "<group>"; };
 		BD37E7FB1B4A0FA900A848E1 /* OthelloUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthelloUI.m; sourceTree = "<group>"; };
+		BDE503CC1B4B66A70099C33E /* amy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amy.jpg; sourceTree = "<group>"; };
+		BDE503CE1B4B66B10099C33E /* theo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = theo.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 		BD0806C81B44C3A6005D9E53 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BDE503CE1B4B66B10099C33E /* theo.jpg */,
+				BDE503CC1B4B66A70099C33E /* amy.jpg */,
 				BD0806C91B44C3A6005D9E53 /* Info.plist */,
 				BD0806CA1B44C3A6005D9E53 /* main.m */,
 			);
@@ -236,6 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD0806D41B44C3A6005D9E53 /* Main.storyboard in Resources */,
+				BDE503CF1B4B66B10099C33E /* theo.jpg in Resources */,
+				BDE503CD1B4B66A70099C33E /* amy.jpg in Resources */,
 				BD0806D91B44C3A6005D9E53 /* LaunchScreen.xib in Resources */,
 				BD0806D61B44C3A6005D9E53 /* Images.xcassets in Resources */,
 			);

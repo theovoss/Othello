@@ -43,11 +43,16 @@
             UIButton *piece = [columnView OthelloPieceAtRow:row];
             NSString *title = self.othelloBoard.board[key];
 //            [piece setTitle:title forState:UIControlStateNormal];
+            [piece setBackgroundColor:[UIColor greenColor]];
+            
             if (title == self.othelloBoard.UP) {
-                [piece setBackgroundColor:[UIColor blackColor]];
+//                [piece setBackgroundColor:[UIColor blackColor]];
+                [piece setBackgroundImage:[UIImage imageNamed:@"theo.jpg"] forState:UIControlStateNormal];
             }
             else if (title == self.othelloBoard.DOWN){
-                [piece setBackgroundColor:[UIColor whiteColor]];
+                [piece setBackgroundImage:[UIImage imageNamed:@"amy.jpg"] forState:UIControlStateNormal];
+
+//                [piece setBackgroundColor:[UIColor whiteColor]];
             }
             else{
                 [piece setBackgroundColor:[UIColor greenColor]];
@@ -63,7 +68,9 @@
     BOOL success = [self.othelloBoard placePiece:row column:column orientation:self.currentOrientation];
     if (success == YES)
     {
-        self.currentOrientation = [self.othelloBoard getOppositeOrientation:self.currentOrientation];
+        if ([self.othelloBoard hasAValidMove:[self.othelloBoard getOppositeOrientation:self.currentOrientation]]) {
+            self.currentOrientation = [self.othelloBoard getOppositeOrientation:self.currentOrientation];
+        }
         [self updateUI];
     }
 }

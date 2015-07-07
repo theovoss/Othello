@@ -25,6 +25,6 @@
 - (IBAction)buttonCallback:(UIButton *)sender;
 
 - (NSInteger)getRowFromIndex:(NSInteger)index;
-- (NSInteger)getRowFromIndex:(NSInteger)index;
+- (NSInteger)getColumnFromIndex:(NSInteger)index;
 
 @end

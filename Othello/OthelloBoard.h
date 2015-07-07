@@ -24,16 +24,18 @@
 
 #pragma mark - functional functions
 - (BOOL) placePiece:(NSInteger) row column:(NSInteger)column orientation:(NSString*)orientation;
+- (BOOL) hasAValidMove:(NSString*) orientation;
 
 #pragma mark - convenience functions
 - (BOOL) isValidPlacement:(NSInteger) row column:(NSInteger)column orientation:(NSString*)orientation;
-- (NSArray *) findAllPiecesToFlip:(NSInteger) row column:(NSInteger)column orientation:(NSString*)orientation;
-
-- (NSArray *)findPiecesToFlipAlongPath:(NSInteger)row column:(NSInteger)column key:(NSString *)key orientationToFlip:(NSString *)orientationToFlip;
+- (NSArray *) findAllPiecesToFlipWithRow:(NSInteger) row column:(NSInteger)column orientation:(NSString*)orientation;
+- (NSArray *) findAllPiecesToFlipWithKey:key orientation:orientation;
+- (NSArray *) findPiecesToFlipAlongPath:(NSInteger)row column:(NSInteger)column key:(NSString *)key orientationToFlip:(NSString *)orientationToFlip;
 - (BOOL) flipPieces:(NSArray *) pieces;
 
 - (BOOL) isEmpty:(NSInteger)row column:(NSInteger)column;
-- (BOOL) isNextToOppositePiece:(NSInteger)row column:(NSInteger)column orientation:(NSString*) orientation;
+- (BOOL) isNextToOppositePieceWithRow:(NSInteger)row column:(NSInteger)column orientation:(NSString*) orientation;
+- (BOOL) isNextToOppositePieceWithKey:(NSString*)key orientation:(NSString*) orientation;
 - (NSArray *) getAdjacentKeys:(NSInteger) row column:(NSInteger)column;
 - (NSString *) getOppositeOrientation:(NSString*) orientation;
 
